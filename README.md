@@ -5,10 +5,10 @@ This automatic .MAT loader creates a Blender material that you apply to a object
 
 Supports Diffuse, Normal, Specular & Emissive textures
 
-# How to "Setup"
+# Setup/Installation
 
 1. Download the .py file (or click it, then click raw and ctrl+a -> ctrl+c it)
-2. Open blender
+2. Open Blender
 3. Go to the scripting tab, and drag the .py file into the large text box (or paste the code into there from earlier)
 
 # How to use
@@ -22,9 +22,9 @@ Supports Diffuse, Normal, Specular & Emissive textures
    
 5. There are two other options available:
    
-   `outputMaterialName` used to determine the output material name, leave blank (`outputMaterialName = ""`) to make it name it the same as the file
+   `outputMaterialName` Used to determine the output material name. Leave blank (`outputMaterialName = ""`) to match the filename
    
-   `ApplyMaterialToCurrentlySelectedObject` - This one should be pretty self explanatory, make sure you capitilze the first letter in `True` or `False`
+   `ApplyMaterialToCurrentlySelectedObject` - Applies material to the currently selected object. `True` or `False` is case-senitive.
    
 6. Press "Run Script" at the top right
 

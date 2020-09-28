@@ -1,34 +1,34 @@
-# Blender 2.80 Fortnite .mat Auto Loader
+# Blender 2.80+ Fortnite Auto .MAT Loader
 
-This automatic .MAT loader creates a Blender material that you apply to a object.
-**CurRENTLY** Only works when .MAT files re in the samedirectory as the textures
+This automatic .MAT loader creates a Blender material that can be applied to an object.
+**Currently** Only works when .MAT files are in the same directory as the textures.
 
-Supports Diffuse, Normal, Specular & Emissive textures
+**Textures Supported** - Diffuse, Normal, Specular, Emissive 
 
 # Setup/Installation
 
-1. Download the .py file (or click it, then click raw and ctrl+a -> ctrl+c it)
+1. Download the FortniteMaterialLoader.py file **OR** Click the ilnk --> Click 'Raw' --> 'Copy All' Ctrl + A --> 'Paste' Ctrl + C
 2. Open Blender
-3. Go to the scripting tab, and drag the .py file into the large text box (or paste the code into there from earlier)
+3. Go to the 'Scripting' tab. Drag the .py file into the large text box **OR**  Paste the code from earlier there
 
-# How to use
-1. Once you have it imported into the scripting tab, you should setup your exported .mat and exported .tga textures (you must use tga at the moment)
-2. Move the .mat file you want to import to the same folder as the textures (Majority of cosmetics should do this, you can also just drag the textures into the same folder if they are split up, but this is made to deal with the most common case)
+# How-To Use
+1. After importing into 'Scripting', you should setup your exported .MAT file and .TGA textures **(ONLY TGA)**
+2. Move the .MAT file you want to import to the same folder as the textures (Most cosmetics should do this, you can also just drag the textures into the same folder if they are split up, but this is made to deal with the most common case)
 ![alt text](https://i.imgur.com/msfkUP8.gif)
-3. Copy the full path of the .mat file, this can be done by shift right clicking in windows explorer and clicking "Copy As Path"
-4. In the scripting tab in blender, past the full path after "DotMatPath = r", It should look something like: 
+3. Copy the full path of the .MAT file, this can be done by shift right clicking in 'Windows Explorer' and clicking 'Copy As Path'.
+4. From the 'Scripting' tab, paste the full path after "DotMatPath = r" - It should look something like: 
 
-   `DotMatPath = r"C:\PathToUmodelEtc\material.mat"`
+   `DotMatPath = r"C:\PathToUmodelEtc\material.MAT"`
    
 5. There are two other options available:
    
-   `outputMaterialName` Used to determine the output material name. Leave blank (`outputMaterialName = ""`) to match the filename
+   `outputMaterialName` - Determines material name output. Leave blank (`outputMaterialName = ""`) to match the filename.
    
-   `ApplyMaterialToCurrentlySelectedObject` - Applies material to the currently selected object. `True` or `False` is case-senitive.
+   `ApplyMaterialToCurrentlySelectedObject` - Applies material to the currently selected object. `True` or `False` is __case-senitive__.
    
-6. Press "Run Script" at the top right
+6. Press "Run Script" at the top right.
 
 # Demonstration of usage
 https://i.imgur.com/4OMVs4T.mp4
 
-Created on blender 2.80, other versions not verified.
+Modified for Blender 2.83 LTS+

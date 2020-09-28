@@ -123,7 +123,6 @@ with open(DotMatPath) as f:
             #Connecting
             mat.node_tree.links.new(emiTex.outputs[0], emiShader.inputs[0])
             mat.node_tree.links.new(emiShader.outputs[0], addShader.inputs[1])
-
             #Emission End           
 
             

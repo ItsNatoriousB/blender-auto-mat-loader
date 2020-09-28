@@ -2,20 +2,24 @@ import bpy
 import os
 from mathutils import Vector
 
-#inputs, configure it here
-#You can shift right click a selected folder/file in windows explorer 
-#and click "copy as path" and put it in the correct paths (after the r)
-
-#Enter the path to the .mat file for the textures, make sure you copy the .mat file
-#into the same folder as all the textures!
+# Input Configuration
+# Enter the path to the .MAT file and textures.
+# Texture(s) and .MAT file(s) MUST be in the same folder.
+# Shift + right click a selected folder/file in Windows Explorer 
+# Click "Copy As Path" and then paste it in bewtween the quotation marks (after the r)
 DotMatPath = r""
 
-outputMaterialName = "" # Change to just "" to make the material be named the same as the .mat file
+# Material Output Name
+# Change to just "" to use the .MAT filename
+outputMaterialName = "" 
 
-ApplyMaterialToCurrentlySelectedObject = False # read the variable lol, disable if object has multiple materials and apply manually from shading tab
-#END INPUTS, DO NOT TOUCH ANY CODE BELOW
+# Apply Switch
+# Disable if the object has multiple materials and apply manually from "Shading' tab in Blender
+ApplyMaterialToCurrentlySelectedObject = False 
+# Input Configuration End
+# DO NOT TOUCH ANY CODE BELOW
 
-# make the material
+# Material Creation
 if not outputMaterialName:
     outputMaterialName = os.path.basename(DotMatPath)
 
@@ -23,7 +27,9 @@ mat = bpy.data.materials.new(name=outputMaterialName)
 mat.use_nodes = True
 materialOutput = mat.node_tree.nodes.get('Material Output')
 principleBSDF = mat.node_tree.nodes.get('Principled BSDF')
-mat.node_tree.links.remove(principleBSDF.outputs[0].links[0]) # remove inital link
+
+# Remove Inital Link
+mat.node_tree.links.remove(principleBSDF.outputs[0].links[0]) 
 
 addShader = mat.node_tree.nodes.new("ShaderNodeAddShader")
 mat.node_tree.links.new(principleBSDF.outputs[0], addShader.inputs[0])
@@ -39,26 +45,28 @@ with open(DotMatPath) as f:
         if line.startswith("Diffuse="):
             diffuseImgPath = textureBasePath + r"/" + line.replace("Diffuse=", "") + ".tga"
             print(diffuseImgPath)
-            #diffuse texture
+            #Diffuse Texture
             diffuseTex = mat.node_tree.nodes.new("ShaderNodeTexImage")
             diffuseImg = bpy.data.images.load(filepath = diffuseImgPath)
             diffuseTex.image = diffuseImg
             diffuseTex.location = Vector((-400,450))
             #diffuseTex.hide = True
-            #connect diffuseTexture to principle
+
+            #Connect diffuse texture to 'PrincipleBSDF'
             mat.node_tree.links.new(diffuseTex.outputs[0], principleBSDF.inputs[0])
-            #diffuse end
+            #Diffuse End
         elif line.startswith("Normal="):
             normalImgPath = textureBasePath + r"/" + line.replace("Normal=", "") + ".tga"
             print(normalImgPath)
-            #normal begin
+            
+            #Normal Start
             normY = -125
-
             normTex = mat.node_tree.nodes.new("ShaderNodeTexImage")
             normCurve = mat.node_tree.nodes.new("ShaderNodeRGBCurve")
             normMap = mat.node_tree.nodes.new("ShaderNodeNormalMap")
             normImage = bpy.data.images.load(filepath = normalImgPath)
-            #location crap
+            
+            #Location
             normTex.location = Vector((-800, normY))
             normCurve.location = Vector((-500, normY))
             normMap.location = Vector((-200, normY))
@@ -66,22 +74,23 @@ with open(DotMatPath) as f:
             normImage.colorspace_settings.name = 'Non-Color'
             normTex.image = normImage
             #normTex.hide = True
-            #setup rgb curve
+
+            #Setup 'RGB Curve'
             normCurve.mapping.curves[1].points[0].location = (0,1)
             normCurve.mapping.curves[1].points[1].location = (1,0)
-            #connect everything
+
+            #Connect Everything
             mat.node_tree.links.new(normTex.outputs[0], normCurve.inputs[1])
             mat.node_tree.links.new(normCurve.outputs[0], normMap.inputs[1])
             mat.node_tree.links.new(normMap.outputs[0], principleBSDF.inputs['Normal'])
-            #normal end
+            #Normal End
         elif line.startswith("Specular="):
             specularImgPath = textureBasePath + r"/" + line.replace("Specular=", "") + ".tga"
             print (specularImgPath)
-            #specular start
+            
+            #Specular Start
             specY = 140
-
             specTex = mat.node_tree.nodes.new("ShaderNodeTexImage")
-
             specSeperateRGB = mat.node_tree.nodes.new("ShaderNodeSeparateRGB")
             specSeperateRGB.location = Vector((-250, specY))
             #specSeperateRGB.hide = True
@@ -92,31 +101,31 @@ with open(DotMatPath) as f:
             specTex.image = specImage
             specTex.location = Vector((-600, specY))
             #specTex.hide = True
-            #connect spec texture to rgb split
+
+            #Connect specular texture to 'Seperate RGB'
             mat.node_tree.links.new(specTex.outputs[0], specSeperateRGB.inputs[0])
-            #connect rgb splits to principle
+            #Connect 'Seperate RGB' to 'PrincipleBSDF'
             mat.node_tree.links.new(specSeperateRGB.outputs[0], principleBSDF.inputs['Specular'])
             mat.node_tree.links.new(specSeperateRGB.outputs[1], principleBSDF.inputs['Metallic'])
             mat.node_tree.links.new(specSeperateRGB.outputs[2], principleBSDF.inputs['Roughness'])
-            #specular end
+            #Specular End
         elif line.startswith("Emissive="):
             emissiveImgPath = textureBasePath + r"/" + line.replace("Emissive=", "") + ".tga"
             print (emissiveImgPath)
-            #emission start
+            #Emission Start
             emiTex = mat.node_tree.nodes.new("ShaderNodeTexImage")
             emiShader = mat.node_tree.nodes.new("ShaderNodeEmission")
             emiImage = bpy.data.images.load(filepath = emissiveImgPath)
             emiTex.image = emiImage
-            #emission - location
+            #Emission - location
             emiTex.location = Vector((-200, -425))
             emiShader.location = Vector((100, -425))
-            #connecting
+            #Connecting
             mat.node_tree.links.new(emiTex.outputs[0], emiShader.inputs[0])
             mat.node_tree.links.new(emiShader.outputs[0], addShader.inputs[1])
-
-            #emission end           
+            #Emission End           
 
             
-           #ending stuff
+           #END
 if ApplyMaterialToCurrentlySelectedObject:
     bpy.context.active_object.data.materials[0] = mat

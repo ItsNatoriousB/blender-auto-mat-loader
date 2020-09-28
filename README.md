@@ -17,7 +17,9 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 2. Move the .MAT file(s) into the same folder as the textures
    (Most cosmetics should do this, you can also just drag the textures into the same folder if they are split up)
    This was modified to deal with the most common cases.
-![alt text](https://i.imgur.com/msfkUP8.gif)
+   
+   ![alt text](https://i.imgur.com/msfkUP8.gif)
+
 3. Copy the full path of the .MAT file, this can be done by shift right clicking in 'Windows Explorer' and clicking 'Copy As Path'.
 4. From the 'Scripting' tab, paste the full path after "DotMatPath = r" - It should look something like: 
 

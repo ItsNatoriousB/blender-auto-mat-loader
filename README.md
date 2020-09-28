@@ -7,13 +7,14 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 
 # Setup/Installation
 
-1. Download the FortniteMaterialLoader.py file **OR** Click the ilnk --> Click 'Raw' --> 'Copy All' Ctrl + A --> 'Paste' Ctrl + C
-2. Open Blender
-3. Go to the 'Scripting' tab. Drag the .py file into the large text box **OR**  Paste the code from earlier there
+1. Download the FortniteMaterialLoader.py file **OR** Click the ilnk --> Click 'Raw' --> 'Copy All' **Ctrl + A** --> 'Paste' **Ctrl + C**
+2. Open Blender and in the top right, go to the 'Scripting' tab.
+3. Drag **FortniteMaterialLoader.py** file into the large text box **OR** Paste the 'Raw' code there.
 
 # How-To Use
-1. After importing into 'Scripting', you should setup your exported .MAT file and .TGA textures **(ONLY TGA)**
-2. Move the .MAT file you want to import to the same folder as the textures (Most cosmetics should do this, you can also just drag the textures into the same folder if they are split up, but this is made to deal with the most common case)
+
+1. After importing into 'Scripting', - Collect your exported .MAT file and .TGA textures **(ONLY TGA)**
+2. Move the .MAT file(s) into the same folder as the textures (Most cosmetics should do this, you can also just drag the textures into the same folder if they are split up, but this is made to deal with the most common case)
 ![alt text](https://i.imgur.com/msfkUP8.gif)
 3. Copy the full path of the .MAT file, this can be done by shift right clicking in 'Windows Explorer' and clicking 'Copy As Path'.
 4. From the 'Scripting' tab, paste the full path after "DotMatPath = r" - It should look something like: 
@@ -31,4 +32,4 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 # Demonstration of usage
 https://i.imgur.com/4OMVs4T.mp4
 
-Modified for Blender 2.83 LTS+
+Modified to work with Blender 2.83 LTS+

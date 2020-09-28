@@ -25,13 +25,13 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
    
 5. There are two options available:
    
-   `outputMaterialName` - Determines material name output. Leave blank (`outputMaterialName = ""`) to match the filename.
-   
-   `ApplyMaterialToCurrentlySelectedObject` - Applies material to the currently selected object. `True` or `False` is __case-senitive__.
+   * `outputMaterialName` - Determines material name output. Blank matches the filename ex. (`outputMaterialName = ""`)
+   * `ApplyMaterialToCurrentlySelectedObject` - Applies material to the currently selected object. `True` or `False` is __case-senitive__.
    
 6. Press "Run Script" at the top right.
 
 # Demonstration of usage
+
 https://i.imgur.com/4OMVs4T.mp4
 
 Modified to work with [Blender 2.83 LTS+](https://www.blender.org/download/lts/)

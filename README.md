@@ -5,9 +5,9 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 
 # Supported Game Model Exports
 
-* --Fortnite--
-* --COD:MW - Warzone--
-* --Rogue Company--
+* ~~Fortnite~~
+* ~~COD:MW - Warzone~~
+* ~~Rogue Company~~
 
 **Textures Supported** - Diffuse, Normal, Specular, Emissive 
 

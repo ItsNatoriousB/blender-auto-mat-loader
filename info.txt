@@ -1,0 +1,44 @@
+== Blender Auto .MAT Loader ==
+Created by Curtis Holt.
+https://curtisholt.online/links
+
+---
+This purpose of this module is to simplify the use of the Blender API
+(bpy) by creating an extra layer of abstraction that is more human-
+readable, memorable and reduces the user's exposure to complex code 
+paths.
+EasyBPY can be added to Blender by installing it into the:
+            ../scripts/modules
+folder in the user preferences. The file can also be re-packaged with
+any other addon, so long as the developer respects the limitations of
+the GPL license.
+
+Documentation will become available over time as the project evolves.
+In the meantime, a list of all available functions is provided below.
+
+Extra Credits:
+Charan (Just 3D Things), JYoshi, 3D_Bubble
+---               
+
+MATERIALS
+- create_material                                                    
+- get_material                      
+- add_material_to_object                 
+- get_materials                   
+- get_materials_from_object         
+- get_material_names_from_object    
+
+NODES
+( more coming soon )
+- set_material_use_nodes
+- get_node_tree
+- create_node
+- get_node_links
+- create_node_link
+
+TEXTURES
+- create_texture
+- get_texture
+- get_all_textures
+- rename_texture
+- delete_texture

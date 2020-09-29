@@ -20,9 +20,10 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 
 # How-To Use
 
-1. After importing into 'Scripting', - Collect your exported .MAT file and .TGA textures **(ONLY TGA)**
-2. Move the .MAT file(s) into the same folder as the textures **OR** Move the textures to the same directory as the .MAT file(s)
-   This was modified to deal with the most common cases.
+1. After importing into Blender - Collect your exported .MAT file and .TGA textures **(ONLY TGA)**
+ - Move the .MAT file(s) into the same folder as the textures
+ - Move the textures to the same directory as the .MAT file(s)
+   _This was modified to deal with the most common cases._
    
    ![alt text](https://i.imgur.com/msfkUP8.gif)
 

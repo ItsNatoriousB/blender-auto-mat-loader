@@ -9,11 +9,12 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 * ~~COD:MW - Warzone~~
 * ~~Rogue Company~~
 
-**Textures Supported** - Diffuse, Normal, Specular, Emissive 
+**Textures Supported** - ~~Diffuse, Normal, Specular, Emissive~~
 
 # Setup/Installation
-
-1. Download the **[auto-mat-loader.py](https://github.com/mr910/BlenderFortniteMaterial/blob/master/FortniteMaterialLoader.py)** file **OR** Click the lilnk --> Click **'Raw'** --> 'Copy All' **Ctrl + A** --> 'Paste' **Ctrl + C**
+1. Download or copy the script.
+ - Download - **[auto-mat-loader.py](https://raw.githubusercontent.com/mr910/blender-auto-mat-loader/master/auto-mat-loader.py)** 
+ - Click the link --> Click **'Raw'** --> 'Copy All' **Ctrl + A** --> 'Paste' **Ctrl + C**
 2. Open Blender and in the top right, go to the **'Scripting'** tab.
 3. Drag **AutoMaterialLoader.py** file into the large text box **OR** Paste the 'Raw' code there.
 

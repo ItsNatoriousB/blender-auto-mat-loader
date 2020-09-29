@@ -12,9 +12,9 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 **Textures Supported** - ~~Diffuse, Normal, Specular, Emissive~~
 
 # Setup/Installation
-1. Download or copy the script.
- - Download - **[auto-mat-loader.py](https://raw.githubusercontent.com/mr910/blender-auto-mat-loader/master/auto-mat-loader.py)** 
- - Click the link --> Click **'Raw'** --> 'Copy All' **Ctrl + A** --> 'Paste' **Ctrl + C**
+1. **Download** or **Copy** Auto Mat Loader.
+ - _Download_ - Right Click -> 'Save As' - **[auto-mat-loader.py](https://raw.githubusercontent.com/mr910/blender-auto-mat-loader/master/auto-mat-loader.py)** 
+ - _Copy_ - Click **[RAW](https://raw.githubusercontent.com/mr910/blender-auto-mat-loader/master/auto-mat-loader.py)** -> 'Copy All' **Ctrl + A** -> 'Paste' **Ctrl + C** - 
 2. Open Blender and in the top right, go to the **'Scripting'** tab.
 3. Drag **AutoMaterialLoader.py** file into the large text box **OR** Paste the 'Raw' code there.
 

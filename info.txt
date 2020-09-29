@@ -1,44 +1,34 @@
 == Blender Auto .MAT Loader ==
-Created by Curtis Holt.
-https://curtisholt.online/links
+I am only responsible for modifications that make this script functional.
+All credit goes to Lucas7yoshi (https://github.com/Lucas7yoshi/BlenderFortniteMaterial)
+and RhyCynn (https://github.com/RhyCynn)
 
 ---
-This purpose of this module is to simplify the use of the Blender API
-(bpy) by creating an extra layer of abstraction that is more human-
-readable, memorable and reduces the user's exposure to complex code 
-paths.
-EasyBPY can be added to Blender by installing it into the:
-            ../scripts/modules
-folder in the user preferences. The file can also be re-packaged with
-any other addon, so long as the developer respects the limitations of
-the GPL license.
+This purpose of this script is to utilize the .MAT files provided
+when exporting assets from games and simplify the process of connecting
+the textures using the Blender API.
+
+Having efficiency in mind, I wanted to offter a level of accuracy that
+would give more time to learn other Blender features.
+
+This script can also be re-packaged with any other addon, so long as the
+developer respects the limitations ofthe GPL license.
 
 Documentation will become available over time as the project evolves.
 In the meantime, a list of all available functions is provided below.
 
-Extra Credits:
-Charan (Just 3D Things), JYoshi, 3D_Bubble
 ---               
 
 MATERIALS
 - create_material                                                    
-- get_material                      
-- add_material_to_object                 
-- get_materials                   
-- get_materials_from_object         
-- get_material_names_from_object    
+- add_material_to_object                    
 
 NODES
 ( more coming soon )
 - set_material_use_nodes
 - get_node_tree
 - create_node
-- get_node_links
 - create_node_link
 
 TEXTURES
 - create_texture
-- get_texture
-- get_all_textures
-- rename_texture
-- delete_texture

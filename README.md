@@ -8,6 +8,7 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 * ~~Fortnite~~
 * ~~COD:MW - Warzone~~
 * ~~Rogue Company~~
+* ~~Spellbreak~~
 
 **Textures Supported** - ~~Diffuse, Normal, Specular, Emissive~~
 

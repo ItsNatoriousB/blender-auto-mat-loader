@@ -7,6 +7,7 @@ This automatic .MAT loader creates a Blender material that can be applied to an 
 
 * ~~Fortnite~~
 * ~~COD:MW - Warzone~~
+* ~~Black Ops: Cold War~~
 * ~~Rogue Company~~
 * ~~Spellbreak~~
 
